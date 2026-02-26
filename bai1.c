@@ -28,21 +28,18 @@ void main()
 
     while (i < strlen(str))
     {
-        if ((str[i] >= 'a' && str <= 'z') || (str[i] >= 'A' && str <= 'Z'))
+
+        if ((str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z'))
         {
-            if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'y' || str[i] == 'u' || str[i] == 'A' || str[i] == 'E' || str[i] == 'I' || str[i] == 'O' || str[i] == 'Y' || str[i] == 'U')
-            {
-                n++;
-            };
+            isNum++;
         }
-        else
+        if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'y' || str[i] == 'u' || str[i] == 'A' || str[i] == 'E' || str[i] == 'I' || str[i] == 'O' || str[i] == 'Y' || str[i] == 'U')
         {
-            printf("khong nhap so");
-            isNum = 1;
-        }
+            n++;
+        };
         i++;
     }
-    p = strlen(str) - n;
+    p = strlen(str) - n - isNum;
     printf("Chuoi %s co %d nguyen am va %d phu am\n", str, n, p);
     char rev[100];
     strncpy(rev, str, sizeof(str) - 1);
