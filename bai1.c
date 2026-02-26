@@ -23,13 +23,23 @@ void main()
 
     int i = 0;
     int n = 0, p = 0;
+    int isNum = 0;
     // printf("%d", strlen(str));
+
     while (i < strlen(str))
     {
-        if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'y' || str[i] == 'u' || str[i] == 'A' || str[i] == 'E' || str[i] == 'I' || str[i] == 'O' || str[i] == 'Y' || str[i] == 'U')
+        if ((str[i] >= 'a' && str <= 'z') || (str[i] >= 'A' && str <= 'Z'))
         {
-            n++;
-        };
+            if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'y' || str[i] == 'u' || str[i] == 'A' || str[i] == 'E' || str[i] == 'I' || str[i] == 'O' || str[i] == 'Y' || str[i] == 'U')
+            {
+                n++;
+            };
+        }
+        else
+        {
+            printf("khong nhap so");
+            isNum = 1;
+        }
         i++;
     }
     p = strlen(str) - n;
